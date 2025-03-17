@@ -1,0 +1,65 @@
+$primary-bg: #f9f9f9;
+$white: #fff;
+$border-color: #ccc;
+$text-color: #555;
+$shadow-light: rgba(0, 0, 0, 0.1);
+
+@mixin box-shadow($x, $y, $blur, $color) {
+  box-shadow: $x $y $blur $color;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin font-style($size, $weight: normal, $color: inherit) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+.posts {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: $primary-bg;
+  @include border-radius(10px);
+  @include box-shadow(0px, 4px, 8px, $shadow-light);
+
+  &-search {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid $border-color;
+    @include border-radius(5px);
+    @include font-style(16px);
+  }
+
+  &-loading,
+  &-empty {
+    text-align: center;
+    @include font-style(18px, bold, $text-color);
+  }
+
+  &-list {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.post-item {
+  background: $white;
+  padding: 15px;
+  margin-bottom: 10px;
+  @include border-radius(5px);
+  @include box-shadow(0px, 2px, 4px, $shadow-light);
+
+  &-title {
+    @include font-style(18px, bold);
+    margin-bottom: 5px;
+  }
+
+  &-body {
+    @include font-style(14px, normal, #666);
+  }
+}

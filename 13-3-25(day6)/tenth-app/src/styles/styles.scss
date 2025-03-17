@@ -1,0 +1,72 @@
+$primary-color: #007bff;
+$secondary-color: #333;
+$bg-color: #f8f9fa;
+$border-radius: 8px;
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin transition($property) {
+  transition: $property 0.3s ease-in-out;
+}
+
+
+.container {
+  padding: 20px;
+  background-color: $bg-color;
+  min-height: 100vh;
+  @include flex-center;
+  flex-direction: column;
+}
+
+.search-box {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid $secondary-color;
+  border-radius: $border-radius;
+  font-size: 16px;
+  outline: none;
+  @include transition(border);
+
+  &:focus {
+    border-color: $primary-color;
+  }
+}
+
+.item-list {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  max-width: 800px;
+}
+
+.item-card {
+  background: white;
+  border-radius: $border-radius;
+  padding: 10px;
+  box-shadow: $box-shadow;
+  text-align: center;
+  @include transition(transform);
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.item-image {
+  width: 100%;
+  height: auto;
+  border-radius: $border-radius;
+}
+
+.item-name {
+  font-size: 14px;
+  color: $secondary-color;
+  margin-top: 5px;
+}

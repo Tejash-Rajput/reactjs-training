@@ -1,0 +1,84 @@
+$primary-color: #3498db;
+$danger-color: #e74c3c;
+$bg-light: #f4f4f4;
+$text-dark: #333;
+$shadow: rgba(0, 0, 0, 0.1);
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button-style($bg-color) {
+  background: $bg-color;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.counter {
+  max-width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  background: $bg-light;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px $shadow;
+
+  &-title {
+    font-size: 24px;
+    color: $text-dark;
+  }
+
+  &-display {
+    margin: 15px 0;
+    @include flex-center;
+    font-size: 22px;
+  }
+
+  &-input {
+    width: 50px;
+    padding: 5px;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid $text-dark;
+    border-radius: 5px;
+  }
+
+  &-value {
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  &-buttons {
+    @include flex-center;
+    gap: 10px;
+  }
+
+  &-btn {
+    @include button-style($primary-color);
+  }
+
+  &-decrement {
+    @include button-style($danger-color);
+  }
+
+  &-reset {
+    @include button-style(gray);
+  }
+}

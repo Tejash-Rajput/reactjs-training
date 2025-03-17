@@ -1,0 +1,35 @@
+// Theme Colors
+$primary-color: #007bff;
+$text-light: #ffffff;
+$text-dark: #333;
+
+// Box Shadow
+$shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+@mixin box-shadow {
+  box-shadow: $shadow;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hello {
+  font-size: 28px;
+  text-align: center;
+  color: $text-dark;
+  margin-top: 20px;
+}
+
+.header {
+  background-color: $primary-color;
+  color: $text-light;
+  text-align: center;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  @include box-shadow;
+}

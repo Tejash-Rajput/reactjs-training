@@ -1,0 +1,75 @@
+react 	
+	folder structure
+		node modules :- contains modules that we import and the modules are nothing just code that executes when we call them in our app 
+		public :- html , images , manifest, etc main thing is html which is being render on the frontend 
+			manifest :-It provides metadata for your web application when added to a device's home screen.
+					is a part of Progressive Web App (PWA) setup.
+			robot.txt:-Web site owners use the /robots.txt file to give instructions about their site to web robots; this is called The Robots Exclusion Protocol.
+				It works likes this: a robot wants to vists a Web site URL, say http://www.example.com/welcome.html. Before it does so, it firsts checks for 						http://www.example.com/robots.txt, and finds:
+				User-agent: *
+				Disallow: /
+				The "User-agent: *" means this section applies to all robots. The "Disallow: /" tells the robot that it should not visit any pages on the site.
+
+
+
+index html	
+	div :- id='root' 
+
+in this we dont have scriptsrc to get index.js from src bcz 
+		In traditional web development, you'd explicitly reference JavaScript files using a tag like this:
+			<script src="index.js"></script>
+		However, in React projects (like those created with create-react-app), you don't directly add this link to index.html because 
+		the build process and development server handle it.
+		The development server (react-scripts) automatically compiles your JavaScript (src/index.js, App.js, etc.) and injects the necessary <script> tags dynamically
+
+
+src folder has index js 
+where the execution of code starts and it renders the components to the div element taken from the html using react-dom/client module :-createroot method 	
+
+
+
+component 
+	rule 1 :- always return JSX ---if it doesn't return any jsx then it is normal function 
+	rule 2 :- component name must start with uppercase letter ---- if not then it will be treated as html tags 
+	Feature			<HelloWorld />		HelloWorld()
+	JSX Support		Yes			Yes
+	Props			Supported		Not supported
+	Lifecycle Hooks		Supported		Not supported
+	React Features		Full support		Limited
+
+
+
+JSX(javascript XML)
+	embedding expression in jsx:- for normal html we need to write `` for expression 
+	js in jsx :- function of component can be pass to {}
+	dynamic attribute :- const img ="url"
+				const ele = 	<img src={img}>
+	
+
+props
+	props are like parameters to function 
+
+
+components life cycle
+	constructed->mounted->updated->unmounted->con....
+
+hooks:- starts with use___
+	useState hook:-  state of component is a variable that holds some info. that may change over the lifetime of the component
+			whenever the value of the state changes, the component re-renders itself with updatedvalues
+
+
+	useEffect hook:- run code during the change in lifecycle of a component 
+			1 arg is function that we want to execute and 2 arg is dependency array
+
+
+when the component is mounting it executes the function which is in the useEffect 
+and during the unmounting the function which we are returning is being executed 
+
+
+
+
+react context api :- 
+
+
+
+react router dom

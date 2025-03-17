@@ -1,0 +1,82 @@
+@mixin flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@mixin container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+}
+
+body {
+  background-color: #b4b4b4;
+  padding: 0;
+  margin: 0;
+  .navbar {
+    background-color: black;
+    color: white;
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    .red {
+      text-decoration: none;
+      background-color: red;
+      color: white;
+    }
+    .no {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  .container {
+    @include container;
+    .posts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 15px;
+      margin-top: 20px;
+      .card {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        a {
+          text-decoration: none;
+          color: inherit;
+          h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+          }
+
+          p {
+            font-size: 14px;
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+  .post-details {
+    padding: auto;
+    margin-top: 100px;
+    @include flex;
+  }
+  .about {
+    @include flex;
+    @include container;
+    font-size: 14px;
+
+  }
+  .contact {
+    @include flex;
+    @include container;
+    font-size: 14px;
+    
+  }
+}

@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    padding: 10px;
+    background-color: aqua;
+
+    .btn-comp{
+        width:55px;
+        background-color: darkblue;
+        padding: 10px;
+        margin-top: 10px;
+        .btn{
+            background-color: brown;
+            padding: auto;
+        }
+    }
+    .count{
+        font-weight: bold;
+        font-size: xx-large;
+        color: chocolate;
+    }
+}

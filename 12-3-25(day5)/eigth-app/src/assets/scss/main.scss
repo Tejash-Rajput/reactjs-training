@@ -1,0 +1,18 @@
+.app-container {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
+  
+    &.red {
+      background-color: black;
+      color: white;
+    }
+  
+    &.blue {
+      background-color: gray;
+      color: black;
+    }
+  }
+  

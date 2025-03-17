@@ -1,0 +1,4 @@
+use as prefix 
+use built-in hooks 
+avoid side effects outside hooks
+keep hooks pure 
